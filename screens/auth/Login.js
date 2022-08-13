@@ -5,6 +5,7 @@ import auth from '@react-native-firebase/auth';
 import {Text} from 'react-native-paper';
 // Other Functions
 import {emailValidator, passwordValidator} from '../../core/validators';
+import {installToken} from '../../core/notifications';
 // Templates
 import AppLoading from '../AppLoading';
 import {AuthContext} from '../../routes/AuthProvider';

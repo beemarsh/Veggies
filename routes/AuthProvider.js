@@ -14,6 +14,7 @@ function navigate(name, params) {
 export default class AuthProvider extends React.Component {
   state = {
     loading: true,
+    language: 'NP',
   };
 
   // This Function is used to display message
@@ -23,6 +24,8 @@ export default class AuthProvider extends React.Component {
         value={{
           loading: this.state.loading,
           setLoading: v => this.setState({loading: v}),
+          lang: this.state.language,
+          setLang: v => this.setState({language: v}),
         }}>
         {this.props.children}
       </AuthContext.Provider>

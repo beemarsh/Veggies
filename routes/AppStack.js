@@ -16,11 +16,14 @@ import Home from '../screens/app/Home';
 import Drawer from '../screens/app/Drawer';
 import Market from '../screens/app/Market';
 import Notifications from '../screens/app/Notifications';
+import Settings from '../screens/app/Settings';
 
 // Icons
 import Entypo from 'react-native-vector-icons/Entypo';
 import Ionicon from 'react-native-vector-icons/Ionicons';
-import {TouchableOpacity} from 'react-native';
+import MCIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+// Functions
+import {onScanPress} from '../core/modelFn';
 
 // Constants
 export const Stack = createStackNavigator();
@@ -59,7 +62,7 @@ const TabNavigator = () => {
   }, [loadDisplay]);
   return (
     <Tab.Navigator
-      initialRouteName="HOME"
+      initialRouteName="SETTINGS"
       screenOptions={{
         tabBarShowLabel: false,
         headerShown: false,
@@ -71,12 +74,13 @@ const TabNavigator = () => {
           paddingVertical: 5,
           elevation: 1,
           display: loading ? 'none' : loadDisplay,
-          position: 'absolute',
-          bottom: 25,
-          left: 20,
-          right: 20,
+          bottom: 10,
+          // position: 'absolute',
+          // left: 20,
+          // right: 20,
           borderRadius: 15,
           height: 65,
+          width:"90%",alignSelf:"center"
         },
         tabBarItemStyle: {
           marginBottom: 10,
@@ -96,7 +100,7 @@ const TabNavigator = () => {
         name="DRAWER"
         options={{
           tabBarIcon: ({color, size}) => (
-            <Ionicon name="book" color={color} size={size} />
+            <MCIcons name="fruit-cherries" color={color} size={size} />
           ),
         }}
       />
@@ -115,16 +119,16 @@ const TabNavigator = () => {
         name="NOTIFICATIONS"
         options={{
           tabBarIcon: ({color, size}) => (
-            <Ionicon name="book" color={color} size={size} />
+            <Ionicon name="md-notifications-sharp" color={color} size={size} />
           ),
         }}
       />
       <Tab.Screen
-        component={Notifications}
-        name="NEWS"
+        component={Settings}
+        name="SETTINGS"
         options={{
           tabBarIcon: ({color, size}) => (
-            <Ionicon name="book" color={color} size={size} />
+            <Ionicon name="menu" color={color} size={size} />
           ),
         }}
       />
@@ -134,7 +138,7 @@ const TabNavigator = () => {
 
 const CustomButton = ({children, onPress}) => (
   <Pressable
-    onPress={onPress}
+    onPress={onScanPress}
     style={{top: -30, justifyContent: 'center', alignItems: 'center'}}>
     <View
       style={{
