@@ -17,6 +17,7 @@ import Drawer from '../screens/app/Drawer';
 import Market from '../screens/app/Market';
 import Notifications from '../screens/app/Notifications';
 import Settings from '../screens/app/Settings';
+import AddVeggies from '../screens/app/AddVeggies';
 
 // Icons
 import Entypo from 'react-native-vector-icons/Entypo';
@@ -39,6 +40,14 @@ export default class AppStack extends Component {
           initialRouteName={'TAB'}
           screenOptions={{headerShown: false}}>
           <Stack.Screen component={TabNavigator} name="TAB" />
+
+          {/* MODALS */}
+          <Stack.Group
+            screenOptions={{
+              ...TransitionPresets.ModalPresentationIOS,
+            }}>
+            <Stack.Screen name="ADD" component={AddVeggies} />
+          </Stack.Group>
         </Stack.Navigator>
       </Provider>
     );
@@ -62,7 +71,7 @@ const TabNavigator = () => {
   }, [loadDisplay]);
   return (
     <Tab.Navigator
-      initialRouteName="SETTINGS"
+      initialRouteName="MARKET"
       screenOptions={{
         tabBarShowLabel: false,
         headerShown: false,
@@ -80,7 +89,8 @@ const TabNavigator = () => {
           // right: 20,
           borderRadius: 15,
           height: 65,
-          width:"90%",alignSelf:"center"
+          width: '90%',
+          alignSelf: 'center',
         },
         tabBarItemStyle: {
           marginBottom: 10,
@@ -96,8 +106,8 @@ const TabNavigator = () => {
         }}
       />
       <Tab.Screen
-        component={Drawer}
-        name="DRAWER"
+        component={Market}
+        name="MARKET"
         options={{
           tabBarIcon: ({color, size}) => (
             <MCIcons name="fruit-cherries" color={color} size={size} />
@@ -106,7 +116,7 @@ const TabNavigator = () => {
       />
       <Tab.Screen
         component={Market}
-        name="MARKET"
+        name="SCAN"
         options={{
           tabBarIcon: ({color, size}) => (
             <Ionicon name="ios-scan-outline" color={color} size={size} />

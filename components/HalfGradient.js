@@ -9,7 +9,7 @@ export default function HalfGradientBackground({gradient}) {
   return (
     <View style={styles.halfBlueBackground}>
       <LinearGradient
-        colors={gradient ? gradient : ['#68a52c', '#bfe063']}
+        colors={gradient ? gradient : ['#56a1d5', '#077bcd', '#08739f']}
         style={styles.linearGradient}></LinearGradient>
     </View>
   );
