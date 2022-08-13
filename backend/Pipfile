@@ -7,6 +7,15 @@ name = "pypi"
 fastapi = "*"
 uvicorn = {extras = ["standrad"], version = "*"}
 firebase-admin = "*"
+matplotlib = "*"
+tensorflow = "*"
+tensorflow-hub = "*"
+tensorflow-datasets = "*"
+scikit-learn = "*"
+lightgbm = "*"
+opencv-python = "*"
+scikit-image = "*"
+python-multipart = "*"
 
 [dev-packages]
 
