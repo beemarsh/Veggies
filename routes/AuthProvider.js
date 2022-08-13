@@ -1,5 +1,4 @@
 import React, {createContext} from 'react';
-// import * as auth from 'firebase/auth';
 export const AuthContext = createContext();
 import {NavigationRef} from './Route';
 

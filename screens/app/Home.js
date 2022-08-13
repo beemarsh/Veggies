@@ -1,7 +1,9 @@
 import {View, Text} from 'react-native';
 import React from 'react';
-
+// Templates
 import AppLoading from '../AppLoading';
+import {AuthContext} from '../../routes/AuthProvider';
+// Styles
 
 function HomeTemplate() {
   return (
@@ -12,5 +14,6 @@ function HomeTemplate() {
 }
 
 export default function Home() {
-  return <AppLoading screen={HomeTemplate} />;
+  const {loading} = React.useContext(AuthContext);
+  return <AppLoading screen={<HomeTemplate />} start={loading} />;
 }

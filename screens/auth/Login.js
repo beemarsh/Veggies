@@ -8,6 +8,8 @@ import {emailValidator, passwordValidator} from '../../core/validators';
 // Templates
 import AppLoading from '../AppLoading';
 import {AuthContext} from '../../routes/AuthProvider';
+import {getMessageFromCode} from '../../core/errCodes';
+import {showMessage, hideMessage} from 'react-native-flash-message';
 // Components
 import Logo from '../../components/Logo';
 import TextInput from '../../components/TextInput';
@@ -15,17 +17,15 @@ import Button from '../../components/Button';
 import {NavigationRef as navigation} from '../../routes/Route';
 // Styles
 import {LoginStyles as styles} from '../../styles/login';
-
+import {theme} from '../../core/theme';
 
 function LoginTemplate() {
-  const {setSnackMessage} = React.useContext(AuthContext);
-
   const [email, setEmail] = React.useState({
-    value: '',
+    value: 'test@veggies.com',
     error: '',
   });
   const [password, setPassword] = React.useState({
-    value: '',
+    value: 'veggies123',
     error: '',
   });
 
@@ -56,10 +56,12 @@ function LoginTemplate() {
       // Successful Login
     } catch (error) {
       if (__DEV__) console.log(error);
-      setSnackMessage({
-        e: true,
-        v: true,
-        m: error?.code ? getMessageFromCode(error.code) : `Couldn't Login`,
+      showMessage({
+        message: error?.code
+          ? getMessageFromCode(error.code)
+          : `Couldn't Login`,
+        type: 'info',
+        backgroundColor: theme.colors.black,
       });
       setProcess(null);
     }
