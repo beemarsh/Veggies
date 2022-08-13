@@ -1,0 +1,9 @@
+POST http://localhost:8000/signup
+Content-Type: application/json
+
+{
+    "name": "Yubraj",
+    "email": "d@d.com",
+    "phone_number" : "+977 9847000000",
+    "password": "password"
+ }
