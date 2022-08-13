@@ -1,0 +1,76 @@
+{
+  "project_info": {
+    "project_number": "636384526421",
+    "project_id": "veggies-368ae",
+    "storage_bucket": "veggies-368ae.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:636384526421:android:6fac1432493f1a34f094dc",
+        "android_client_info": {
+          "package_name": "com.veggies"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "636384526421-1g1g5j378un1u7ri6shr7upqenl57762.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDz9_8dqZFGhCzPYPaWs9rRuzAZGimd8_8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "636384526421-1g1g5j378un1u7ri6shr7upqenl57762.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:636384526421:android:4f346d712cbd8221f094dc",
+        "android_client_info": {
+          "package_name": "com.veggiesthefarmerapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "636384526421-ik5br26or62k5ruv4e4umsh4tbi6kpvh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.veggiesthefarmerapp",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "636384526421-1g1g5j378un1u7ri6shr7upqenl57762.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDz9_8dqZFGhCzPYPaWs9rRuzAZGimd8_8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "636384526421-1g1g5j378un1u7ri6shr7upqenl57762.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
