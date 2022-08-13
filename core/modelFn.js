@@ -16,10 +16,8 @@ export async function onScanPress() {
   body.append('image', {
     uri: our_data['uri'],
     name: our_data['fileName'],
-    filename: our_data['fileName'],
     type: our_data['type'],
   });
-  body.append('Content-Type', 'image/png');
 
   const request = await fetch(server.url, {
     method: 'POST',
