@@ -16,7 +16,10 @@ Veggies is the agricultural mobile app that incorporates Machine learning featur
                           
                           
 # App Demo 
+                          ## Technologies Used
                           
+                     
+                       
                           
 
 
