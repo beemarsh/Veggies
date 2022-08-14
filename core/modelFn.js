@@ -1,35 +1,25 @@
-import {launchCamera} from 'react-native-image-picker';
+import {launchCamera, launchImageLibrary} from 'react-native-image-picker';
+
+import {useFormik} from 'formik';
+import RNFetchBlob from 'rn-fetch-blob';
 
 import {server} from './server';
 
+import {NavigationRef} from '../routes/Route';
+
 export async function onScanPress() {
-  const result = await launchCamera({
-    mediaType: 'photo',
-    selectionLimit: 1,
-  });
+  try {
+    const result = await launchCamera({
+      mediaType: 'photo',
+      selectionLimit: 1,
+    });
 
-  console.log(result);
+    console.log(result);
 
-  let our_data = result.assets[0];
-  let body = new FormData();
+    let our_data = result.assets[0];
 
-  body.append('image', {
-    uri: our_data['uri'],
-    name: our_data['fileName'],
-    type: our_data['type'],
-  });
-
-  const request = await fetch(server.url, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'multipart/form-data',
-    },
-    body: body,
-  });
-
-  const json = await request.json();
-
-  console.log(json);
-
-  return result.assets[0];
+    NavigationRef.navigate('DISEASE', {assets: our_data});
+  } catch (error) {
+    console.log(error);
+  }
 }

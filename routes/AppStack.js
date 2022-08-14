@@ -18,6 +18,7 @@ import Market from '../screens/app/Market';
 import Notifications from '../screens/app/Notifications';
 import Settings from '../screens/app/Settings';
 import AddVeggies from '../screens/app/AddVeggies';
+import DiseaseML from '../screens/app/DiseaseML';
 
 // Icons
 import Entypo from 'react-native-vector-icons/Entypo';
@@ -47,6 +48,7 @@ export default class AppStack extends Component {
               ...TransitionPresets.ModalPresentationIOS,
             }}>
             <Stack.Screen name="ADD" component={AddVeggies} />
+            <Stack.Screen name="DISEASE" component={DiseaseML} />
           </Stack.Group>
         </Stack.Navigator>
       </Provider>
